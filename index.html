@@ -157,6 +157,39 @@
 <heading>Projects</heading>
 	      
         <table width="100%" align="center" border="0" cellspacing="20" cellpadding="20">
+		<tr onmouseout="dpzlearn_stop()" onmouseover="dpzlearn_start()">
+            <td width="35%">
+              <div class="one">
+                <div class="two" id='dpzlearn_image'><img src='images/jose/kiunet3d.png' height="200" width="270" ></div>
+                <img src='images/jose/densekiunet.png' height="200" width="270" >
+              </div>
+              <script type="text/javascript">
+                function dpzlearn_start() {
+                  document.getElementById('dpzlearn_image').style.opacity = "1";
+                }
+                function dpzlearn_stop() {
+                  document.getElementById('dpzlearn_image').style.opacity = "0";
+                }
+                dpzlearn_stop()
+              </script>
+            </td>
+            <td valign="middle" width="75%">
+              <a href="https://arxiv.org">
+                <papertitle>R2D: Learning Shadow Removal to Enhance Fine-Context Shadow Detection</papertitle>
+              </a>
+		 <div><b href=""> Under Review at CVPR 2021 </b> 
+		    </div>   
+              <br>
+		    <br>
+              <p><strong><a href="https://jeya-maria-jose.github.io/research/">V Jeya Maria Jose</a></strong>,
+              Christina Chen,
+		    Vishal M. Patel
+		    </p>
+              
+		    
+              <p> We propose a Fine Context-aware Shadow Detection Network (FCSD-Net) and a new learning strategy Restore to Detect (R2D) for shadow detection where we leverage the complementary nature of shadow removal and detection tasks to enhance the detection.</p>
+            </td>
+			
   <tr onmouseout="dpzlearn_stop()" onmouseover="dpzlearn_start()">
             <td width="35%">
               <div class="one">
@@ -219,6 +252,7 @@
 		      <strong><a href="https://jeya-maria-jose.github.io/research/">V Jeya Maria Jose</a></strong> and
 		    Vishal M. Patel
 		    </p>    
+		    <p> <a href="https://arxiv.org/abs/2010.016">Paper </a> |  <a href="https://github.com/jeya-maria-jose/Overcomplete-Deep-Subspace-Clustering"> Code </a> </p>
               <p> For the task of unsupervised subspace clustering, we show that fusing the features from both undercomplete and overcomplete auto-encoder networks before passing them through the self-expressive layer enables us
 to extract a more meaningful and robust representation of
 the input data for clustering with numerous advantages and performance boost.  </p>
