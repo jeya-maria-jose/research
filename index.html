@@ -1,165 +1,580 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-  <meta name=viewport content="width=800">
-  <meta name="generator" content="HTML Tidy for Linux/x86 (vers 11 February 2007), see www.w3.org">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Jeya Maria Jose - Senior Researcher at Microsoft Research specializing in Computer Vision, Machine Learning, and NLP for Healthcare">
   <style type="text/css">
-    /* Color scheme stolen from Sergey Karayev */
-    
-    a {
-      color: #2d59eb;
-      text-decoration: none;
-    }
-    b {
-      color: #e3124a;
-      text-decoration: none;
-    }
-	  c {
-      color: #0BDA51;
-      text-decoration: none;
-    }
-    d {
-      color: #FFA500;
-      text-decoration: none;
-    }
-	e {
-      color: #001940;
-      text-decoration: none;
-    }
-	  f {
-      color: #670d75;
-      text-decoration: none;
-    }
-    a:focus,
-    a:hover {
-      color: #af19bf;
-      text-decoration: none;
-    }
-	  b:focus,
-	   c:focus,
-	   d:focus,
-    
-    body,
-    td,
-    th,
-    tr,
-    p,
-    a {
-      font-family: 'Lato', Verdana, Helvetica, sans-serif;
-      font-size: 16px
-      background-image: "images/jose/bg.png";
-       /*background-color: #fffff;*/
+    /* Modern CSS Variables for Easy Theme Management */
+    :root {
+      --primary-color: #6366f1;
+      --secondary-color: #8b5cf6;
+      --accent-color: #ec4899;
+      --success-color: #10b981;
+      --warning-color: #f59e0b;
+      --danger-color: #ef4444;
+      --dark-color: #1e293b;
+      --light-bg: #f8fafc;
+      --card-bg: #ffffff;
+      --text-primary: #0f172a;
+      --text-secondary: #64748b;
+      --border-color: #e2e8f0;
+      --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+      --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+      --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+      --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1);
+      --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      --gradient-2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+      --gradient-3: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
     }
     
-    strong {
-      font-family: 'Lato', Verdana, Helvetica, sans-serif;
+    /* Reset and Base Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    html {
+      scroll-behavior: smooth;
+    }
+    
+    body {
+      font-family: 'Inter', 'Lato', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
       font-size: 16px;
+      line-height: 1.6;
+      color: var(--text-primary);
+      background: linear-gradient(to bottom, #f8fafc 0%, #e0e7ff 100%);
+      background-attachment: fixed;
     }
     
-    heading {
-      font-family: 'Lato', Verdana, Helvetica, sans-serif;
-      font-size: 24px;
-    }
-    
-    papertitle {
-      font-family: 'Lato', Verdana, Helvetica, sans-serif;
-      font-size: 16px;
-      font-weight: 700
-    }
-    
-    name {
-      font-family: 'Lato', Verdana, Helvetica, sans-serif;
-      font-size: 34px;
-    }
-    
-    .one {
-      width: 160px;
-      height: 160px;
+    /* Link Styles */
+    a {
+      color: var(--primary-color);
+      text-decoration: none;
+      transition: all 0.3s ease;
       position: relative;
     }
     
-    .two {
-      width: 160px;
-      height: 160px;
+    a:hover {
+      color: var(--secondary-color);
+      transform: translateY(-1px);
+    }
+    
+    a::after {
+      content: '';
       position: absolute;
-      transition: opacity .2s ease-in-out;
-      -moz-transition: opacity .2s ease-in-out;
-      -webkit-transition: opacity .2s ease-in-out;
+      width: 0;
+      height: 2px;
+      bottom: -2px;
+      left: 0;
+      background: var(--gradient-1);
+      transition: width 0.3s ease;
+    }
+    
+    a:hover::after {
+      width: 100%;
+    }
+    
+    /* Custom Color Classes */
+    b {
+      color: var(--danger-color);
+      font-weight: 600;
+    }
+    
+    c {
+      color: var(--success-color);
+      font-weight: 600;
+    }
+    
+    d {
+      color: var(--warning-color);
+      font-weight: 600;
+    }
+    
+    e {
+      color: var(--dark-color);
+      font-weight: 600;
+    }
+    
+    f {
+      color: var(--secondary-color);
+      font-weight: 600;
+    }
+    
+    strong {
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+    
+    /* Typography */
+    h1, h2, h3, h4, h5, h6 {
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+      color: var(--text-primary);
+    }
+    
+    h2 {
+      font-size: 2rem;
+      background: var(--gradient-1);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      display: inline-block;
+      margin-bottom: 2rem;
+      position: relative;
+    }
+    
+    h2::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 60px;
+      height: 4px;
+      background: var(--gradient-1);
+      border-radius: 2px;
+    }
+    
+    heading {
+      font-size: 1.75rem;
+      font-weight: 700;
+    }
+    
+    papertitle {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--primary-color);
+      display: inline-block;
+      transition: all 0.3s ease;
+    }
+    
+    papertitle:hover {
+      color: var(--secondary-color);
+    }
+    
+    name {
+      font-size: 3rem;
+      font-weight: 800;
+      background: var(--gradient-1);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      display: inline-block;
+      letter-spacing: -1px;
+    }
+    
+    /* Container and Layout */
+    .main-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+    
+    /* Hero Section */
+    .hero-section {
+      background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+      border-radius: 24px;
+      padding: 3rem;
+      margin-bottom: 3rem;
+      box-shadow: var(--shadow-lg);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      animation: fadeInUp 0.8s ease;
+    }
+    
+    /* Profile Image */
+    .profile-image {
+      border-radius: 50%;
+      box-shadow: var(--shadow-xl);
+      border: 5px solid white;
+      transition: all 0.4s ease;
+      animation: float 6s ease-in-out infinite;
+    }
+    
+    .profile-image:hover {
+      transform: scale(1.05) rotate(2deg);
+      box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+    }
+    
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+    
+    /* Social Links */
+    .social-links {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 1.5rem;
+    }
+    
+    .social-links a {
+      background: white;
+      padding: 0.75rem 1.5rem;
+      border-radius: 12px;
+      box-shadow: var(--shadow-md);
+      transition: all 0.3s ease;
+      font-weight: 600;
+      border: 2px solid transparent;
+    }
+    
+    .social-links a::after {
+      display: none;
+    }
+    
+    .social-links a:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--primary-color);
+      background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+    }
+    
+    /* News Section */
+    .news-section {
+      background: white;
+      border-radius: 16px;
+      padding: 2rem;
+      margin-bottom: 3rem;
+      box-shadow: var(--shadow-lg);
+      border: 1px solid var(--border-color);
+      animation: fadeInUp 0.8s ease 0.2s both;
+    }
+    
+    .news-scroll {
+      max-height: 400px;
+      overflow-y: auto;
+      padding-right: 1rem;
+    }
+    
+    .news-scroll::-webkit-scrollbar {
+      width: 8px;
+    }
+    
+    .news-scroll::-webkit-scrollbar-track {
+      background: var(--light-bg);
+      border-radius: 4px;
+    }
+    
+    .news-scroll::-webkit-scrollbar-thumb {
+      background: var(--primary-color);
+      border-radius: 4px;
+    }
+    
+    .news-scroll::-webkit-scrollbar-thumb:hover {
+      background: var(--secondary-color);
+    }
+    
+    .news-scroll ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    
+    .news-scroll li {
+      padding: 1rem;
+      margin-bottom: 0.75rem;
+      background: var(--light-bg);
+      border-radius: 12px;
+      border-left: 4px solid var(--primary-color);
+      transition: all 0.3s ease;
+    }
+    
+    .news-scroll li:hover {
+      transform: translateX(5px);
+      box-shadow: var(--shadow-md);
+      background: white;
+    }
+    
+    /* Paper Cards */
+    .paper-card {
+      background: white;
+      border-radius: 16px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: var(--shadow-md);
+      border: 1px solid var(--border-color);
+      transition: all 0.4s ease;
+      animation: fadeInUp 0.6s ease both;
+    }
+    
+    .paper-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-xl);
+      border-color: var(--primary-color);
+    }
+    
+    .paper-card table {
+      width: 100%;
+      border-spacing: 0;
+    }
+    
+    .paper-card td {
+      padding: 0;
+      vertical-align: middle;
+    }
+    
+    /* Image Container */
+    .one {
+      width: 270px;
+      height: 200px;
+      position: relative;
+      overflow: hidden;
+      border-radius: 12px;
+      box-shadow: var(--shadow-md);
+    }
+    
+    .one img {
+      transition: transform 0.4s ease;
+    }
+    
+    .one:hover img {
+      transform: scale(1.1);
+    }
+    
+    .two {
+      width: 270px;
+      height: 200px;
+      position: absolute;
+      transition: opacity .3s ease-in-out;
+      -moz-transition: opacity .3s ease-in-out;
+      -webkit-transition: opacity .3s ease-in-out;
     }
     
     .fade {
-      transition: opacity .2s ease-in-out;
-      -moz-transition: opacity .2s ease-in-out;
-      -webkit-transition: opacity .2s ease-in-out;
+      transition: opacity .3s ease-in-out;
+      -moz-transition: opacity .3s ease-in-out;
+      -webkit-transition: opacity .3s ease-in-out;
+    }
+    
+    /* Badge Styles */
+    .badge {
+      display: inline-block;
+      padding: 0.35rem 0.85rem;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin: 0.25rem;
+      background: var(--gradient-1);
+      color: white;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.3s ease;
+    }
+    
+    .badge:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
     }
     
     span.highlight {
-      background-color: #CA7FD4;
+      background: linear-gradient(135deg, rgba(202, 127, 212, 0.3) 0%, rgba(147, 51, 234, 0.3) 100%);
+      padding: 0.25rem 0.5rem;
+      border-radius: 6px;
+    }
+    
+    /* Services Section */
+    .services-section {
+      background: white;
+      border-radius: 16px;
+      padding: 2rem;
+      margin-top: 3rem;
+      box-shadow: var(--shadow-lg);
+      border: 1px solid var(--border-color);
+      animation: fadeInUp 0.8s ease 0.4s both;
+    }
+    
+    .services-section p {
+      margin-bottom: 0.75rem;
+      padding-left: 1.5rem;
+      position: relative;
+    }
+    
+    .services-section p::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: var(--primary-color);
+      font-weight: bold;
+    }
+    
+    /* Back to Top Button */
+    .back-to-top {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      width: 50px;
+      height: 50px;
+      background: var(--gradient-1);
+      color: white;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      box-shadow: var(--shadow-lg);
+      transition: all 0.3s ease;
+      z-index: 1000;
+    }
+    
+    .back-to-top:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-xl);
+    }
+    
+    .back-to-top.show {
+      display: flex;
+    }
+    
+    /* Animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    /* Style all table-based research entries as cards */
+    body > div > div:not(.hero-section):not(.news-section):not(.services-section) table,
+    body > div > table:not(.hero-section table):not(.news-section table):not(.services-section table) {
+      background: white;
+      border-radius: 16px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: var(--shadow-md);
+      border: 1px solid var(--border-color);
+      transition: all 0.4s ease;
+    }
+    
+    body > div > div:not(.hero-section):not(.news-section):not(.services-section) table:hover,
+    body > div > table:not(.hero-section table):not(.news-section table):not(.services-section table):hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-xl);
+      border-color: var(--primary-color);
+    }
+    
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .main-container {
+        padding: 1rem;
+      }
+      
+      .hero-section {
+        padding: 2rem 1.5rem;
+      }
+      
+      name {
+        font-size: 2rem;
+      }
+      
+      h2 {
+        font-size: 1.5rem;
+      }
+      
+      .paper-card,
+      body > div > div:not(.hero-section):not(.news-section):not(.services-section) table,
+      body > div > table:not(.hero-section table):not(.news-section table):not(.services-section table) {
+        padding: 1.5rem;
+      }
+      
+      .one {
+        width: 100%;
+        height: auto;
+      }
+      
+      .social-links {
+        flex-direction: column;
+      }
+      
+      .social-links a {
+        width: 100%;
+        text-align: center;
+      }
+      
+      table {
+        display: block;
+        overflow-x: auto;
+      }
+      
+      td {
+        display: block;
+        width: 100% !important;
+        text-align: center !important;
+        padding: 1rem 0 !important;
+      }
+    }
+    
+    /* Table Improvements */
+    table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+    }
+    
+    td, th {
+      padding: 0.75rem;
+    }
+    
+    /* Smooth Page Load */
+    body {
+      animation: fadeIn 0.5s ease;
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
   </style>
   <link rel="icon" type="image/png" href="images/jose/jhuicon.png">
-  <title>Jeya Maria Jose</title>
-  <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <title>Jeya Maria Jose - Senior Researcher | Microsoft Research</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href='https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Lato:wght@400;700&display=swap' rel='stylesheet'>
 </head>
 
 <body>
-  <table width="900" border="0" align="center" cellspacing="0" cellpadding="0">
-    <tr>
-      <td>
-        <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
-          <tr>
-            <td width="67%" valign="middle">
-              <p align="center">
-                <name>Jeya Maria Jose</name>
-              </p>
+  <div class="main-container">
+    <!-- Hero Section -->
+    <div class="hero-section">
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td width="67%" valign="middle" style="padding-right: 2rem;">
+            <p style="text-align: center; margin-bottom: 1.5rem;">
+              <name>Jeya Maria Jose</name>
+            </p>
 
-		    <p>I am a Senior Researcher at  <strong><e style="color:SlateGray;">Microsoft Research</e></strong>. My research spans Computer Vision, Machine Learning, and NLP with an emphasis on impactful real-world applications like Healthcare. My current research revolves around building multi-modal AI systems that harness large-scale real-world data to accelerate biomedical discoveries, optimize clinical workflows, and transform healthcare.  
-		    </p>
+            <p style="margin-bottom: 1rem; line-height: 1.8;">I am a Senior Researcher at <strong><e style="color:SlateGray;">Microsoft Research</e></strong>. My research spans Computer Vision, Machine Learning, and NLP with an emphasis on impactful real-world applications like Healthcare. My current research revolves around building multi-modal AI systems that harness large-scale real-world data to accelerate biomedical discoveries, optimize clinical workflows, and transform healthcare.</p>
 
-		    
-              <p>Previously, I was a postdoctoral researcher at <b href="https://www.stanford.edu/">Stanford University</b>, working with <a href="https://scholar.google.com/citations?user=mG4imMEAAAAJ&hl=en">Andrew Ng</a> and <a href="https://curtlanglotz.com/">Curtis Langlotz</a>. I obtained my Ph.D. and M.S from <strong><a style="color:SlateBlue;">Johns Hopkins University</a></strong> advised by <a href="https://scholar.google.com/citations?user=AkEXTbIAAAAJ&hl=en"> Vishal M Patel </a>.     
-		    </p>
-		   
-<!-- 		    <p> I co-lead the <a href="https://stanfordmlgroup.github.io/programs/aihc-bootcamp/">AI for Healthcare bootcamp</a> at Stanford.
-		    </p>
-		    -->
-<!-- 		      <p>
-		      My research focus right now is on foundation models and generative AI, with a focus on medical applications. I have worked on several topics like designing effective deep architectures, model adaptability to changing environments, understanding the role of data and annotations, multi-modal learning and taming large models for computer vision and healthcare tasks.  </p> -->
+            <p style="margin-bottom: 1rem; line-height: 1.8;">Previously, I was a postdoctoral researcher at <b href="https://www.stanford.edu/">Stanford University</b>, working with <a href="https://scholar.google.com/citations?user=mG4imMEAAAAJ&hl=en">Andrew Ng</a> and <a href="https://curtlanglotz.com/">Curtis Langlotz</a>. I obtained my Ph.D. and M.S from <strong><a style="color:SlateBlue;">Johns Hopkins University</a></strong> advised by <a href="https://scholar.google.com/citations?user=AkEXTbIAAAAJ&hl=en">Vishal M Patel</a>.</p>
 
-		
-		<p> I am glad to be recognized as an <strong><d href="https://research.google/"> Amazon fellow </d></strong>. I also had the opportunity to work with research teams at <strong><a href="https://research.google/">G</a></strong><strong><b href="https://research.google/">o</b></strong><strong><d href="https://research.google/">o</d></strong><strong><a href="https://research.google/">g</a></strong><strong><c href="https://research.google/">l</c></strong><strong><b href="https://research.google/">e</b></strong>, <strong><c href="https://www.nvidia.com/en-us/research/"> NVIDIA </c></strong>, and <strong><b href="https://research.adobe.com/"> Adobe </b></strong> during my Ph.D. 
-		</p>
+            <p style="margin-bottom: 1.5rem; line-height: 1.8;">I am glad to be recognized as an <strong><d href="https://research.google/">Amazon fellow</d></strong>. I also had the opportunity to work with research teams at <strong><a href="https://research.google/">G</a></strong><strong><b href="https://research.google/">o</b></strong><strong><d href="https://research.google/">o</d></strong><strong><a href="https://research.google/">g</a></strong><strong><c href="https://research.google/">l</c></strong><strong><b href="https://research.google/">e</b></strong>, <strong><c href="https://www.nvidia.com/en-us/research/">NVIDIA</c></strong>, and <strong><b href="https://research.adobe.com/">Adobe</b></strong> during my Ph.D.</p>
 
-<!-- 		<p>
-			I hold a Bachelor's from <a href="https://www.nitt.edu/">NIT Trichy, India</a> in 2019 while also working closely with <a href="https://www.nus.edu.sg/">National University of Singapore</a>.
-              </p> -->
-              
-		<p>
-              
-              <p align=center>
-                <a href="mailto:jeyamariajose7@gmail.com">Email</a> &nbsp/&nbsp
-                <a href="https://drive.google.com/file/d/1XTFQgDuEbVpj_Uq5f6sCtG-rHAMwg1qG/view?usp=sharing">CV</a> &nbsp/&nbsp
-               
-                <a href="https://scholar.google.co.in/citations?user=vphpzPYAAAAJ&hl=en">Google Scholar</a> &nbsp/&nbsp
-		      <a href="https://github.com/jeya-maria-jose">Github</a> &nbsp/&nbsp
-                <a href="https://www.linkedin.com/in/jeya-maria-jose-357951130"> LinkedIn </a>
-              </p>
-              <td width="33%">
-              <img src="images/jose/jmj_24.jpg" height = "250" width = "250">
-            </td>
-            
-          </tr>
-        </table>
-<!-- 	      
-      <center><img src='images/jose/logos_new2.png'  height="195" width="825"></center> -->
-	  
-       <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-            <tr>
-			<a id="news"><h2>News</h2></a>
-			<p>
-            <div style="width:100%;overflow-y:scroll; height:200px;">
+            <div class="social-links">
+              <a href="mailto:jeyamariajose7@gmail.com">📧 Email</a>
+              <a href="https://drive.google.com/file/d/1XTFQgDuEbVpj_Uq5f6sCtG-rHAMwg1qG/view?usp=sharing">📄 CV</a>
+              <a href="https://scholar.google.co.in/citations?user=vphpzPYAAAAJ&hl=en">🎓 Google Scholar</a>
+              <a href="https://github.com/jeya-maria-jose">💻 Github</a>
+              <a href="https://www.linkedin.com/in/jeya-maria-jose-357951130">💼 LinkedIn</a>
+            </div>
+          </td>
+          <td width="33%" valign="middle" style="text-align: center;">
+            <img src="images/jose/jmj_24.jpg" class="profile-image" height="250" width="250" alt="Jeya Maria Jose">
+          </td>
+        </tr>
+      </table>
+    </div>
+    <!-- News Section -->
+    <div class="news-section">
+      <a id="news"><h2>🔥 Latest News</h2></a>
+      <div class="news-scroll">
                 <ul id="News">
 		    <p>
 		    </p>
@@ -234,24 +649,19 @@
 		    <li> August, 2019   -     Joined <strong><b href = "https://www.jhu.edu/" class ="text-succes"> Johns Hopkins University </b></strong> for my Ph.D with <strong><c class = "text-success">ECE fellowship</c></strong>.
              		</li>
             </ul>
-            </div>
-			</p>
-          </tr>
-        </tbody></table>
+      </div>
+    </div>
 
-		<br>
-		<br>
-
-	 <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-            <tr>
-			<a id="research"><h2>Research</h2></a>
-			<p>	
-				<table width="100%" align="center" border="0" cellspacing="20" cellpadding="20">
-	<tr onmouseout="tr_stop()" onmouseover="tr_start()">
-            <td width="35%">
+    <!-- Research Section -->
+    <a id="research"><h2>🔬 Research Publications</h2></a>
+    <div style="margin-top: 2rem;">
+      <div class="paper-card">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr onmouseout="tr_stop()" onmouseover="tr_start()">
+            <td width="35%" style="padding-right: 2rem;">
               <div class="one">
-                <center><div class="two" id='porlight_image' class="center"> <img src='images/jose/stress.png'height="200" width="270" class="center"></div></center>
-               <img src='images/jose/stress.png' height="200" width="270" align="center">
+                <div class="two" id='tr_image' style="opacity: 0;"><img src='images/jose/stress.png' height="200" width="270"></div>
+                <img src='images/jose/stress.png' height="200" width="270">
               </div>
               <script type="text/javascript">
                 function tr_start() {
@@ -260,52 +670,57 @@
                 function tr_stop() {
                   document.getElementById('tr_image').style.opacity = "0";
                 }
-               tr_stop()
+                tr_stop()
               </script>
             </td>
-            <td valign="middle" width="75%">
+            <td valign="middle" width="65%">
               <a href="https://arxiv.org/pdf/2509.18234">
-                 <papertitle>The Illusion of Readiness: Stress Testing Large Frontier Models on Multimodal Medical Benchmarks</papertitle> 
-              </a>        
-		<div><b href="https://arxiv.org/pdf/2509.18234">  </b></font> 
-		    </div>
-			<br>  
-	     Microsoft Research, Microsoft Health and Life Sciences
-		    </p><a href="https://arxiv.org/pdf/2509.18234"> Paper  </a>  
-		
-	 </td>
+                <papertitle>The Illusion of Readiness: Stress Testing Large Frontier Models on Multimodal Medical Benchmarks</papertitle>
+              </a>
+              <br><br>
+              <p style="margin-top: 0.5rem; color: var(--text-secondary);">Microsoft Research, Microsoft Health and Life Sciences</p>
+              <p style="margin-top: 1rem;">
+                <a href="https://arxiv.org/pdf/2509.18234" style="margin-right: 1rem;">📄 Paper</a>
+              </p>
+            </td>
           </tr>
-				<table width="100%" align="center" border="0" cellspacing="20" cellpadding="20">
-	<tr onmouseout="tr_stop()" onmouseover="tr_start()">
-            <td width="35%">
+        </table>
+      </div>
+      
+      <div class="paper-card">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr onmouseout="tr_stop2()" onmouseover="tr_start2()">
+            <td width="35%" style="padding-right: 2rem;">
               <div class="one">
-                <center><div class="two" id='porlight_image' class="center"> <img src='data/jose/ehr_tte.png'height="200" width="270" class="center"></div></center>
-               <img src='data/jose/ehr_tte.png' height="200" width="270" align="center">
+                <div class="two" id='tr_image2' style="opacity: 0;"><img src='data/jose/ehr_tte.png' height="200" width="270"></div>
+                <img src='data/jose/ehr_tte.png' height="200" width="270">
               </div>
               <script type="text/javascript">
-                function tr_start() {
-                  document.getElementById('tr_image').style.opacity = "1";
+                function tr_start2() {
+                  document.getElementById('tr_image2').style.opacity = "1";
                 }
-                function tr_stop() {
-                  document.getElementById('tr_image').style.opacity = "0";
+                function tr_stop2() {
+                  document.getElementById('tr_image2').style.opacity = "0";
                 }
-               tr_stop()
+                tr_stop2()
               </script>
             </td>
-            <td valign="middle" width="75%">
+            <td valign="middle" width="65%">
               <a href="https://arxiv.org/pdf/2411.09361">
-                 <papertitle>Time-to-Event Pretraining for 3D Medical Imaging</papertitle> 
-              </a>        
-		<div><b href="https://arxiv.org/pdf/2406.06512"> ICLR 2025 </b></font> 
-		    </div>
-			<br>  
-	     Zepeng Huo*, Jason Alan Fries*, Alejandro Lozano*, <strong><a href="https://jeya-maria-jose.github.io/research/">Jeya Maria Jose</a></strong> , Ethan Steinberg, Louis Blankemeier,
-Akshay S. Chaudhari, Curtis Langlotz, Nigam H. Shah
-		    </p><a href="https://arxiv.org/pdf/2411.09361"> Paper  </a>  
-		
-	 </td>
+                <papertitle>Time-to-Event Pretraining for 3D Medical Imaging</papertitle>
+              </a>
+              <div style="margin-top: 0.5rem;"><b>ICLR 2025</b></div>
+              <p style="margin-top: 0.5rem; color: var(--text-secondary);">Zepeng Huo*, Jason Alan Fries*, Alejandro Lozano*, <strong><a href="https://jeya-maria-jose.github.io/research/">Jeya Maria Jose</a></strong>, Ethan Steinberg, Louis Blankemeier, Akshay S. Chaudhari, Curtis Langlotz, Nigam H. Shah</p>
+              <p style="margin-top: 1rem;">
+                <a href="https://arxiv.org/pdf/2411.09361">📄 Paper</a>
+              </p>
+            </td>
           </tr>
-				<table width="100%" align="center" border="0" cellspacing="20" cellpadding="20">
+        </table>
+      </div>
+      
+      <div class="paper-card">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
 	<tr onmouseout="tr_stop()" onmouseover="tr_start()">
             <td width="35%">
               <div class="one">
@@ -1334,12 +1749,9 @@ Shao-Yuan Lo,
           </tr>
 	  
 		
-          <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
-          <tr>
-            <td width="100%" valign="middle">
-             <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-            <tr>
-			<a id="teach"><h2>Services</h2></a>
+    <!-- Services Section -->
+    <div class="services-section">
+      <a id="teach"><h2>🎯 Services</h2></a>
 		    <p>
 			    Web Chair: <strong><a href="http://www.avss2021.org/">AVSS 2021</a></strong>
 		    </p>
@@ -1378,9 +1790,58 @@ Shao-Yuan Lo,
 			    <div> <strong><d>Workshops :</d></strong> 
             <p> BrainLes,  Medical Image Learning with Less Labels and Imperfect Data </p>
 		    <div>
-		 <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
-          <tr>
-            <td>
-              <br>
+    </div>
+    
+    <!-- Visitor Map -->
+    <div style="text-align: center; margin: 3rem 0; padding: 2rem; background: white; border-radius: 16px; box-shadow: var(--shadow-lg);">
       <script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=f5f4f4&w=a&t=tt&d=4oNS7GMLzd6uqlifXXoWHJs7VBLH4fPNor9WNhD_QWQ&co=2d5f82&cmn=5a38bd'></script>
+    </div>
+  </div>
+
+  <!-- Back to Top Button -->
+  <button class="back-to-top" id="backToTop" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+    ↑
+  </button>
+
+  <!-- JavaScript for Interactive Features -->
+  <script>
+    // Back to Top Button
+    window.addEventListener('scroll', function() {
+      const backToTop = document.getElementById('backToTop');
+      if (window.pageYOffset > 300) {
+        backToTop.classList.add('show');
+      } else {
+        backToTop.classList.remove('show');
+      }
+    });
+
+    // Smooth reveal animations on scroll
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, observerOptions);
+
+    // Observe all paper cards
+    document.querySelectorAll('.paper-card').forEach(card => {
+      card.style.opacity = '0';
+      card.style.transform = 'translateY(20px)';
+      card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+      observer.observe(card);
+    });
+    
+    // Add animation delay to stagger the cards
+    document.querySelectorAll('.paper-card').forEach((card, index) => {
+      card.style.transitionDelay = `${index * 0.1}s`;
+    });
+  </script>
+</body>
 </html>
