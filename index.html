@@ -162,6 +162,7 @@
   <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="publications.css">
+  <script src="publications.js" defer></script>
 </head>
 
 <body>
@@ -323,6 +324,11 @@
 
 	 <section class="publication-section" id="research" aria-labelledby="research-title">
   <h2 id="research-title">Research</h2>
+  <div id="publication-filters" role="group" aria-label="Filter research papers" hidden>
+    <button class="publication-filter" type="button" data-publication-filter="all" aria-pressed="true" aria-controls="publication-list">All</button>
+    <button class="publication-filter" type="button" data-publication-filter="highlighted" aria-pressed="false" aria-controls="publication-list">Highlighted</button>
+    <span id="publication-filter-status" role="status"></span>
+  </div>
   <div id="publication-list">
     <article class="publication-card" data-topics="medical" aria-labelledby="publication-title-1">
       <a class="publication-visual" href="https://arxiv.org/html/2607.18218">
