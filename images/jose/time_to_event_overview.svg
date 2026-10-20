@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 600 450" role="img" aria-labelledby="title description">
+  <title id="title">Time-to-event pretraining for 3D medical imaging</title>
+  <desc id="description">Conceptual illustration: pretrain a 3D CT encoder using future EHR event times and censored follow-up, then predict future risk. Illustrative scan and timeline, not patient data or measured results.</desc>
+  <metadata>Original explanatory schematic based on https://arxiv.org/html/2411.09361, Introduction and Figure 1. The method uses time-to-event distributions sourced from longitudinal EHRs as supervision for 3D medical imaging, including right-censored outcomes. This figure contains no quantitative performance claims.</metadata>
+  <defs>
+    <marker id="arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0L7 3.5L0 7Z" fill="#175cc3"/></marker>
+    <marker id="teal-arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0L7 3.5L0 7Z" fill="#006d77"/></marker>
+  </defs>
+  <rect width="600" height="450" fill="#ffffff"/>
+  <g font-family="Arial, Helvetica, sans-serif" transform="translate(0 -32)">
+    <g stroke="#aabdda" stroke-width="2">
+      <rect x="62" y="104" width="103" height="88" rx="10" fill="#e6edf7"/>
+      <rect x="50" y="115" width="103" height="88" rx="10" fill="#d5e1f1"/>
+      <rect x="38" y="126" width="103" height="88" rx="10" fill="#26374e"/>
+    </g>
+    <ellipse cx="90" cy="170" rx="40" ry="33" fill="#8291a6"/>
+    <path d="M84 143C62 136 52 189 77 191C87 189 91 156 84 143M96 143C118 136 128 189 103 191C93 189 89 156 96 143" fill="#26374e"/>
+    <circle cx="90" cy="192" r="6" fill="#dbe4ef"/>
+    <text x="55" y="246" font-size="25" font-weight="700" fill="#12284b">3D CT</text>
+    <path d="M178 165H219" stroke="#175cc3" stroke-width="3" marker-end="url(#arrow)"/>
+    <rect x="232" y="122" width="164" height="88" rx="14" fill="#edf3ff" stroke="#bdd1ef" stroke-width="2"/>
+    <text x="314" y="158" text-anchor="middle" font-size="25" font-weight="700" fill="#175cc3">Image</text>
+    <text x="314" y="189" text-anchor="middle" font-size="25" font-weight="700" fill="#175cc3">encoder</text>
+    <path d="M407 165H438" stroke="#175cc3" stroke-width="3" marker-end="url(#arrow)"/>
+    <path d="M458 198V130M458 198H564" stroke="#94a6c0" stroke-width="2" fill="none"/>
+    <path d="M462 190C499 190 507 151 560 140" stroke="#006d77" stroke-width="4" fill="none"/>
+    <text x="502" y="238" text-anchor="middle" font-size="22" font-weight="700" fill="#006d77">Future risk</text>
+    <path d="M309 302V223" stroke="#006d77" stroke-width="2.5" stroke-dasharray="5 5" marker-end="url(#teal-arrow)"/>
+    <rect x="224" y="263" width="175" height="30" rx="6" fill="#ffffff"/>
+    <text x="311" y="284" text-anchor="middle" font-size="21" fill="#006d77">EHR supervision</text>
+    <path d="M76 324H330M76 376H460" stroke="#175cc3" stroke-width="3"/>
+    <path d="M76 313V387" stroke="#94a6c0" stroke-width="2" stroke-dasharray="4 4"/>
+    <g stroke="#175cc3" stroke-width="3" fill="#ffffff">
+      <circle cx="76" cy="324" r="7"/>
+      <circle cx="76" cy="376" r="7"/>
+      <circle cx="330" cy="324" r="9"/>
+    </g>
+    <path d="M460 364V388" stroke="#006d77" stroke-width="3"/>
+    <text x="76" y="302" text-anchor="middle" font-size="21" font-weight="700" fill="#12284b">Scan</text>
+    <text x="359" y="331" font-size="21" font-weight="700" fill="#12284b">Event observed</text>
+    <text x="346" y="409" font-size="21" font-weight="700" fill="#006d77">Censored follow-up</text>
+    <text x="187" y="352" text-anchor="middle" font-size="21" fill="#175cc3">Time to event</text>
+  </g>
+</svg>

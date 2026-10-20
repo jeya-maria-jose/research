@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 600 450" role="img" aria-labelledby="title description">
+  <title id="title">HealthAgentBench</title>
+  <desc id="description">Conceptual overview: healthcare environments spanning medical imaging, electronic health records and clinical trials. An AI agent acts with tools and is evaluated on task success.</desc>
+  <metadata>Original schematic based on https://microsoft.github.io/HealthAgentBench/ and https://arxiv.org/pdf/2606.31179. Imaging includes X-ray report correction, pathology tumor area selection and CT abnormality classification. EHR includes data quality auditing, format conversion and event modelling. Clinical trials includes patient-to-trial matching. Icons are illustrative, not clinical data or benchmark results.</metadata>
+  <defs>
+    <marker id="arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0L7 3.5L0 7Z" fill="#175cc3"/></marker>
+  </defs>
+  <rect width="600" height="450" fill="#ffffff"/>
+  <g font-family="Arial, Helvetica, sans-serif" transform="translate(0 -40)">
+    <g fill="#f0f6ff" stroke="#c8d9f1" stroke-width="2">
+      <rect x="28" y="104" width="166" height="115" rx="14"/>
+      <rect x="217" y="104" width="166" height="115" rx="14"/>
+      <rect x="406" y="104" width="166" height="115" rx="14"/>
+    </g>
+    <g stroke="#175cc3" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="87" y="121" width="48" height="45" rx="6" fill="#ffffff"/>
+      <path d="M111 131V148M108 136C90 130 91 158 103 157L108 148M114 136C132 130 131 158 119 157L114 148" fill="none"/>
+      <rect x="279" y="119" width="42" height="49" rx="5" fill="#ffffff"/>
+      <path d="M288 130H312M288 140H298M288 150H312M305 140H312" fill="none"/>
+      <path d="M468 165V130H476M502 165V130H494" fill="none"/>
+      <rect x="476" y="120" width="18" height="34" rx="5" fill="#ffffff"/>
+      <path d="M481 136H489M485 132V140M463 165H507" fill="none"/>
+    </g>
+    <g text-anchor="middle" font-size="25" font-weight="700" fill="#12284b">
+      <text x="111" y="199">Imaging</text>
+      <text x="300" y="199">EHR</text>
+      <text x="489" y="199">Trials</text>
+    </g>
+    <g fill="none" stroke="#175cc3" stroke-width="2.5" marker-end="url(#arrow)">
+      <path d="M250 278V247H111V224"/>
+      <path d="M300 278V226"/>
+      <path d="M350 278V247H489V224"/>
+    </g>
+    <text x="63" y="270" font-size="20" fill="#175cc3">Act with tools</text>
+    <rect x="191" y="281" width="218" height="63" rx="15" fill="#175cc3"/>
+    <g fill="none" stroke="#ffffff" stroke-width="2.5">
+      <rect x="209" y="299" width="30" height="24" rx="5"/>
+      <path d="M224 292V299M217 309H219M229 309H231M218 316H230"/>
+    </g>
+    <text x="258" y="322" font-size="29" font-weight="700" fill="#ffffff">AI agent</text>
+    <path d="M300 347V374" stroke="#175cc3" stroke-width="2.5" marker-end="url(#arrow)"/>
+    <rect x="108" y="385" width="384" height="43" rx="10" fill="#e5f6f4"/>
+    <path d="M129 406L136 413L150 397" stroke="#006d77" stroke-width="3.5" fill="none"/>
+    <text x="168" y="415" font-size="25" font-weight="700" fill="#006d77">Evaluate task success</text>
+  </g>
+</svg>
