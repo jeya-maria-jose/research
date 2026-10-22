@@ -84,6 +84,9 @@
 }
 
 #research .publication-image img {
+  /* Anchor percentage heights to the thumbnail box, including in Safari. */
+  position: absolute;
+  inset: 0;
   display: block;
   width: 100%;
   height: 100%;
@@ -91,8 +94,6 @@
 }
 
 #research .publication-image .publication-alternate {
-  position: absolute;
-  inset: 0;
   opacity: 0;
   transition: opacity .2s ease;
 }
@@ -117,8 +118,10 @@
 #research .publication-filter:focus-visible { outline: 3px solid #9b3f60; outline-offset: 4px; }
 
 @media (max-width: 680px) {
-  #research .publication-card { grid-template-columns: 1fr; gap: 18px; }
-  #research .publication-visual { max-width: 360px; width: 100%; margin-inline: auto; }
+  #research .publication-card { grid-template-columns: minmax(0, 1fr); gap: 18px; }
+  #research .publication-visual { max-width: 360px; width: calc(100% - 2px); margin-inline: auto; }
+  #research .publication-body { overflow-wrap: break-word; }
+  #research .publication-filter { min-height: 44px; }
 }
 
 @media (prefers-reduced-motion: reduce) {

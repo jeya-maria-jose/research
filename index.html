@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <meta name=viewport content="width=800">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="generator" content="HTML Tidy for Linux/x86 (vers 11 February 2007), see www.w3.org">
   <style type="text/css">
     /* Beige background with warm charcoal text, berry links, and brown venues. */
@@ -156,21 +156,42 @@
       position: relative;
       min-height: 100vh;
     }
+    @media (max-width: 940px) {
+      .page-layout {
+        width: calc(100% - 32px);
+        table-layout: fixed;
+      }
+    }
+    @media (max-width: 680px) {
+      .profile-layout > tbody > tr {
+        display: flex;
+        flex-direction: column;
+      }
+      .profile-layout .bio,
+      .profile-layout .profile-photo {
+        display: block;
+        width: auto;
+        padding: 16px 0;
+      }
+      .profile-photo { text-align: center; }
+      .profile-photo img { max-width: 100%; height: auto; }
+      .bio p { overflow-wrap: break-word; }
+    }
   </style>
   <link rel="icon" type="image/png" href="images/jose/jhuicon.png">
   <title>Jeya Maria Jose</title>
   <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="publications.css">
+  <link rel="stylesheet" href="publications.css?v=20261022">
   <script src="publications.js" defer></script>
 </head>
 
 <body>
 
-  <table width="900" border="0" align="center" cellspacing="0" cellpadding="0">
+  <table class="page-layout" width="900" border="0" align="center" cellspacing="0" cellpadding="0">
     <tr>
       <td>
-        <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
+        <table class="profile-layout" width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
           <tr>
             <td class="bio" width="67%" valign="middle">
               <p align="center">
@@ -208,7 +229,7 @@
 		      <a href="https://github.com/jeya-maria-jose">Github</a> &nbsp/&nbsp
                 <a href="https://www.linkedin.com/in/jeya-maria-jose-357951130"> LinkedIn </a>
               </p>
-              <td width="33%">
+              <td class="profile-photo" width="33%">
               <img src="images/jose/jmj_24.jpg" height = "250" width = "250">
             </td>
             
@@ -1003,9 +1024,8 @@ Akshay S. Chaudhari, Curtis Langlotz, Nigam H. Shah</div>
     </article>
   </div>
 </section>
-<table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
-          <tr>
-            <td>
-              <br>
-      <script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=f5f4f4&w=a&t=tt&d=4oNS7GMLzd6uqlifXXoWHJs7VBLH4fPNor9WNhD_QWQ&co=2d5f82&cmn=5a38bd'></script>
+      </td>
+    </tr>
+  </table>
+</body>
 </html>
